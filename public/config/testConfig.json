@@ -1,0 +1,18 @@
+{
+    "CONTRACT_ADDRESS": "0xeAa7Aa689eec0e3Ceb70E288d23e01E874a98E5c",
+    "SCAN_LINK": "https://etherscan.io/token/0xeAa7Aa689eec0e3Ceb70E288d23e01E874a98E5c",
+    "NETWORK": {
+      "NAME": "Ropsten",
+      "SYMBOL": "ETH",
+      "ID": 4
+    },
+    "NFT_NAME": "CryptoBroski's",
+    "SYMBOL": "CryptoBroski NFT",
+    "MAX_SUPPLY": 7777,
+    "WEI_COST": 3900000000000000,
+    "DISPLAY_COST": 0.0039,
+    "GAS_LIMIT": 98500,
+    "MARKETPLACE": "LooksRare",
+    "MARKETPLACE_LINK": "https://looksrare.org/collections/0xeAa7Aa689eec0e3Ceb70E288d23e01E874a98E5c",
+    "SHOW_BACKGROUND": true
+  }

@@ -1,8 +1,10 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, Component } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { connect } from "./redux/blockchain/blockchainActions";
 import { fetchData } from "./redux/data/dataActions";
 import * as s from "./styles/globalStyles";
+import Navbar from "./components/Navbar";
+import Web3 from 'web3';
 import styled from "styled-components";
 
 const truncate = (input, len) =>
@@ -27,6 +29,7 @@ export const StyledButton = styled.button`
     -moz-box-shadow: none;
   }
 `;
+
 
 export const StyledRoundButton = styled.button`
   padding: 10px;
@@ -171,14 +174,7 @@ function App() {
       dispatch(fetchData(blockchain.account));
     }
   };
-  const roadMap = () => {
-    window.open("https://cryptobroskis.com/roadmap");
-  };
-  const smartContract = () => {
-    window.open(
-      "https://etherscan.io/token/0xeaa7aa689eec0e3ceb70e288d23e01e874a98e5c"
-    );
-  };
+ 
 
   const getConfig = async () => {
     const configResponse = await fetch("/config/config.json", {
@@ -199,21 +195,28 @@ function App() {
     getData();
   }, [blockchain.account]);
 
+
+
+
+  
+
   return (
     <s.Screen>
+    <Navbar/>
       <s.Container
         flex={1}
         ai={"center"}
         style={{ padding: 24, backgroundColor: "var(--secondary)" }}
         image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
       >
-        <StyledLogo alt={"logo"} src={"/config/images/logo.png"} />
+        
         <s.SpacerSmall />
         <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
           <s.Container flex={1} jc={"center"} ai={"center"}>
-            <StyledImg alt={"example"} src={"/config/images/example.gif"} />
+            <StyledImg alt={"example"} src={"/config/images/siteA.gif"} />
           </s.Container>
           <s.SpacerLarge />
+         
           <s.Container
             flex={2}
             jc={"center"}
@@ -241,17 +244,6 @@ function App() {
                 color: "var(--primary-text)",
               }}
             >
-              <s.TextTitle
-                style={{ textAlign: "center", color: "var(--accent-text)" }}
-              >
-                Check out our:
-              </s.TextTitle>
-              <StyledButton onClick={smartContract}>
-                Verified Contract
-              </StyledButton>
-              <StyledButton target={"_blank"} onClick={roadMap}>
-                Home / Roadmap
-              </StyledButton>
             </s.TextDescription>
             <s.SpacerSmall />
             {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
@@ -282,7 +274,7 @@ function App() {
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
+                  1 {CONFIG.SYMBOL} costs {data.cost}{" "}
                   {CONFIG.NETWORK.SYMBOL}.
                 </s.TextTitle>
                 <s.SpacerXSmall />
@@ -337,6 +329,12 @@ function App() {
                     >
                       {feedback}
                     </s.TextDescription>
+                    <s.TextTitle
+                        style={{ textAlign: "center", color: "var(--accent-text)" }}
+                    >
+                      Mint Status: { data.paused ? "Starting 8/8 @ 12pm EST"   : "Runnng now!"}
+                    </s.TextTitle>
+                    <s.TextTitle  style={{ textAlign: "center", color: "var(--accent-text)" }}>Max Mint Amount: {data.maxMint}</s.TextTitle>
                     <s.SpacerMedium />
                     <s.Container ai={"center"} jc={"center"} fd={"row"}>
                       <StyledRoundButton
@@ -379,7 +377,7 @@ function App() {
                           getData();
                         }}
                       >
-                        {claimingNft ? "Processing" : "Mint Here"}
+                        {claimingNft ? "Processing" : "Buy"}
                       </StyledButton>
                     </s.Container>
                   </>
@@ -392,8 +390,7 @@ function App() {
           <s.Container flex={1} jc={"center"} ai={"center"}>
             <StyledImg
               alt={"example"}
-              src={"/config/images/example.gif"}
-              style={{ transform: "scaleX(-1)" }}
+              src={"/config/images/siteB.gif"}
             />
           </s.Container>
         </ResponsiveWrapper>

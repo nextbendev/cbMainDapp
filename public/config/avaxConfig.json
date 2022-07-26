@@ -1,0 +1,21 @@
+{
+    "CONTRACT_ADDRESS": "0xEB4F5d458B135A8993239f91ab3f45Ab92CD519e",
+    "SCAN_LINK": "https://snowtrace.io/address/0xEB4F5d458B135A8993239f91ab3f45Ab92CD519e#writeContract",
+    "NETWORK": {
+      "NAME": "Avalanche",
+      "SYMBOL": "AVAX",
+      "ID": 43114
+    },
+    "NFT_NAME": "CryptoBroski's",
+    "SYMBOL": "CryptoBroski NFT",
+    "MAX_SUPPLY": 2500,
+    "WEI_COST": 1000000000000000000,
+    "DISPLAY_COST": 1,
+    "GAS_LIMIT": 98500,
+    "MARKETPLACE": "JoePegs",
+    "MARKETPLACE_LINK": "joepegs.com/collections/0xeb4f5d458b135a8993239f91ab3f45ab92cd519e",
+    "SHOW_BACKGROUND": true
+  }
+  
+
+//   test 43115

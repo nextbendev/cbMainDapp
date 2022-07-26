@@ -1,18 +1,18 @@
 {
-  "CONTRACT_ADDRESS": "0xeAa7Aa689eec0e3Ceb70E288d23e01E874a98E5c",
-  "SCAN_LINK": "https://etherscan.io/token/0xeAa7Aa689eec0e3Ceb70E288d23e01E874a98E5c",
+  "CONTRACT_ADDRESS": "0xEB4F5d458B135A8993239f91ab3f45Ab92CD519e",
+  "SCAN_LINK": "https://snowtrace.io/address/0xEB4F5d458B135A8993239f91ab3f45Ab92CD519e#writeContract",
   "NETWORK": {
-    "NAME": "Ethereum",
-    "SYMBOL": "ETH",
-    "ID": 1
+    "NAME": "Avalanche",
+    "SYMBOL": "AVAX",
+    "ID": 43114
   },
   "NFT_NAME": "CryptoBroski's",
   "SYMBOL": "CryptoBroski NFT",
-  "MAX_SUPPLY": 7777,
-  "WEI_COST": 3900000000000000,
-  "DISPLAY_COST": 0.0039,
+  "MAX_SUPPLY": 2500,
+  "WEI_COST": 1000000000000000000,
+  "DISPLAY_COST": 1,
   "GAS_LIMIT": 98500,
-  "MARKETPLACE": "LooksRare",
-  "MARKETPLACE_LINK": "https://looksrare.org/collections/0xeAa7Aa689eec0e3Ceb70E288d23e01E874a98E5c",
+  "MARKETPLACE": "JoePegs",
+  "MARKETPLACE_LINK": "joepegs.com/collections/0xeb4f5d458b135a8993239f91ab3f45ab92cd519e",
   "SHOW_BACKGROUND": true
 }

@@ -2,6 +2,8 @@ const initialState = {
   loading: false,
   totalSupply: 0,
   cost: 0,
+  balanceOf: [],
+  paused: false,
   error: false,
   errorMsg: "",
 };
@@ -16,11 +18,14 @@ const dataReducer = (state = initialState, action) => {
         errorMsg: "",
       };
     case "CHECK_DATA_SUCCESS":
+      
       return {
         ...state,
         loading: false,
         totalSupply: action.payload.totalSupply,
-        // cost: action.payload.cost,
+        cost: action.payload.cost / 1000000000000000000,
+        paused: action.payload.paused,
+        maxMint: action.payload.maxMint,
         error: false,
         errorMsg: "",
       };
